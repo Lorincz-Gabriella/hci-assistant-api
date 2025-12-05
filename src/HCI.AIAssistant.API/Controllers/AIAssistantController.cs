@@ -47,6 +47,8 @@ public class AIAssistantController : ControllerBase
                 }
             );
         }
+        string messageToSendToAssistant = "Instruction: " + _appConfigurationsService.Instruction + "\nMessage: " + request.TextMessage;    
+
 
 #pragma warning disable CS8604
         string textMessageResponse = await _aIAssistantService.SendMessageAndGetResponseAsync(request.TextMessage);
